@@ -13,8 +13,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 {
     use Notifiable, Authenticatable, CanResetPassword;
 
+    // Get department name
     public function getDeptName(){
       return $this->belongsTo('App\Department', 'department_id');
+    }
+
+    //Get user Timelogs
+    public function timeLogs(){
+      return $this->hasMany('App\Timesheet');
     }
 
     /**

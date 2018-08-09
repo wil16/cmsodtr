@@ -11,6 +11,7 @@ use App\User;
 class UserController extends Controller
 {
       public function profile(){
+        //Profile information implements eloquent (App\User)
         $department = Auth::user()->getDeptName;
       return view('profile', array('user' => Auth::user()), ['department'=>$department] );
     }

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">User Dashboard</div>
+                <div class="card-header">Timesheet</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,21 @@
                         </div>
                     @endif
 
-                    You are logged in as User
+                    <table border="1">
+                    <tr>
+                        <th>Date</th>
+                        <th>Time IN</th>
+                        <th>Time OUT</th>
+                    </tr>
+                  </tr>
+      @for($i = 0; $i < count($timeLogs); $i++)
+          <tr>
+              <td>{{ $timeLogs[$i]->date }}</td>
+              <td>{{ $timeLogs[$i]->time_in }}</td>
+              <td>{{ $timeLogs[$i]->time_out }}</td>
+          </tr>
+      @endfor
+                </table>
                 </div>
             </div>
         </div>

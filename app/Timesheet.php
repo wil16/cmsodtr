@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Timesheet extends Model
 {
 
+  //Get User
+  public function userTimesheet(){
+      return $this->belongsTo('App\User', 'user_id');
+    }
   /**
    * The attributes that are mass assignable.
    *
