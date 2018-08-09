@@ -15,14 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('timesheets', 'TimesheetController@timesheet')->name('timesheet');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('profile', 'UserController@update_imgprofile')->name('update_imgprofile');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
+
 
 Route::prefix ('admin')->group(function(){
   Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

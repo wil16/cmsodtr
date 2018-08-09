@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
            $table->date('hire_date');
            $table->date('end_date')->nullable();
            $table->string('profile_img')->default('default.jpg');
-           $table->unsignedInteger('departments_id')->nullable();
-           $table->foreign('departments_id')->references('id')->on('departments')->onDelete('cascade')->onUpdate('cascade');
+           $table->unsignedInteger('department_id')->nullable();
+           $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade')->onUpdate('cascade');
            $table->rememberToken();
            $table->timestamps();
        });

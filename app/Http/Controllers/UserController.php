@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Auth;
 use Image;
+use App\User;
 
 class UserController extends Controller
 {
-    public function profile(){
-      return view('profile', array('user' => Auth::user()) );
+      public function profile(){
+        $department = Auth::user()->getDeptName;
+      return view('profile', array('user' => Auth::user()), ['department'=>$department] );
     }
 
     public function update_imgprofile(Request $request){
@@ -23,6 +26,7 @@ class UserController extends Controller
         $user->profile_img = $filename;
         $user->save();
       }
-      return view('profile', array('user' => Auth::user()) );
+      return view('profile', array('user' => Auth::user()));
     }
+
 }

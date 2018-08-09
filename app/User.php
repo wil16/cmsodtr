@@ -3,11 +3,19 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Authenticatable
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Notifiable;
+    use Notifiable, Authenticatable, CanResetPassword;
+
+    public function getDeptName(){
+      return $this->belongsTo('App\Department', 'department_id');
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +23,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'job_title', 'email', 'password', 'profile_img', 'hire_date', 'end_date',
+        'first_name', 'last_name', 'job_title', 'email', 'password', 'profile_img','department_id', 'hire_date', 'end_date',
     ];
 
     /**
@@ -26,4 +34,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }

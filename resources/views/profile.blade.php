@@ -21,6 +21,7 @@
                       <div class="col-md-7">
                       <h2>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h2>
                       Job Title : {{ Auth::user()->job_title }}<br>
+                      Department : {{ $department->dept_name }}<br>
                       Keycode : {{ Auth::user()->id }}
                       </div>
                   </div>
@@ -29,6 +30,5 @@
         </div>
     </div>
     <br>
-
 </div>
 @endsection
