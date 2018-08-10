@@ -24,7 +24,8 @@
                   </thead>
       @for($i = 0; $i < count($timeLogs); $i++)
           <tr>
-              <td>{{ $timeLogs[$i]->date }}</td>
+
+              <td>{{ Carbon\Carbon::parse($timeLogs[$i]->date)->format('d-m-Y') }}</td>
               <td>{{ $timeLogs[$i]->time_in }}</td>
               <td>{{ $timeLogs[$i]->time_out }}</td>
           </tr>
