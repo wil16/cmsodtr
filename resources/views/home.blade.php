@@ -14,13 +14,14 @@
                         </div>
                     @endif
 
-                    <table border="1">
+                <table class="table">
+                  <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Time IN</th>
-                        <th>Time OUT</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time IN</th>
+                        <th scope="col">Time OUT</th>
                     </tr>
-                  </tr>
+                  </thead>
       @for($i = 0; $i < count($timeLogs); $i++)
           <tr>
               <td>{{ $timeLogs[$i]->date }}</td>
