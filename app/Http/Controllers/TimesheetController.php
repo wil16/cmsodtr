@@ -15,7 +15,7 @@ class TimesheetController extends Controller
      */
     public function index()
     {
-        //
+      //
     }
 
     public function timesheet()

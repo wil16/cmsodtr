@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Timesheet;
 
 
 class HomeController extends Controller
@@ -25,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $timeLogs = Auth::user()->timeLogs;
-        return view('home', array('timeLogs' => $timeLogs) );
+      $timeLogs = auth()->user()->timeLogs()->orderBy('date','desc')->get();
+      //$timeLogs = Auth::user()->timeLogs; //-- working with Auth but without orderBy date sorting
+      //$timeLogs = Timesheet::orderBy('date', 'desc')->get(); //-- working but getting all the data without Auth
+      return view('home', array('timeLogs' => $timeLogs) );
     }
 }
