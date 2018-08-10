@@ -26,9 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $timeLogs = auth()->user()->timeLogs()->orderBy('date','desc')->get();
-      //$timeLogs = Auth::user()->timeLogs; //-- working with Auth but without orderBy date sorting
-      //$timeLogs = Timesheet::orderBy('date', 'desc')->get(); //-- working but getting all the data without Auth
+      $timeLogs = auth()->user()->timeLogs()->orderBy('date','desc')->paginate(10);
       return view('home', array('timeLogs' => $timeLogs) );
     }
 }
