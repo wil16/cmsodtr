@@ -23,6 +23,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
       return $this->hasMany('App\Timesheet');
     }
 
+
     /**
      * The attributes that are mass assignable.
      *

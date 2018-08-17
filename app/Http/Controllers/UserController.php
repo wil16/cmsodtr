@@ -7,16 +7,21 @@ use Illuminate\Support\Facades\DB;
 use Auth;
 use Image;
 use App\User;
+use Validator;
 
 class UserController extends Controller
 {
-      public function profile(){
-        //Profile information implements eloquent (App\User)
-        $department = Auth::user()->getDeptName;
-        return view('profile', array('user' => Auth::user()), ['department'=>$department] );
-    }
 
-    public function update_imgprofile(Request $request){
+      //Function that will handle Android User Login
+
+
+      public function profile(){
+      //Profile information implements eloquent (App\User)
+      $department = Auth::user()->getDeptName;
+      return view('profile', array('user' => Auth::user()), ['department'=>$department] );
+      }
+
+      public function update_imgprofile(Request $request){
       // Handle user upload profile image
       if($request->hasFile('profile_img')){
         $profile_img = $request->file('profile_img');

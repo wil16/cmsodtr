@@ -17,6 +17,7 @@
                 <table class="table">
                   <thead>
                     <tr>
+                        <!--<th scope="col">Day</th>-->
                         <th scope="col">Date</th>
                         <th scope="col">Time IN</th>
                         <th scope="col">Time OUT</th>
@@ -24,7 +25,7 @@
                   </thead>
       @for($i = 0; $i < count($timeLogs); $i++)
           <tr>
-
+              <!--<td>{{ Carbon\Carbon::parse($timeLogs[$i]->date)->format('l') }}</td>-->
               <td>{{ Carbon\Carbon::parse($timeLogs[$i]->date)->format('d-m-Y') }}</td>
               <td>{{ $timeLogs[$i]->time_in }}</td>
               <td>{{ $timeLogs[$i]->time_out }}</td>
