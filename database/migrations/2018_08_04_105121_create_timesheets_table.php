@@ -17,9 +17,7 @@ class CreateTimesheetsTable extends Migration
             $table->increments('id');
             $table->date('date');
             $table->time('time_in');
-            $table->string('capture_img_in');
             $table->time('time_out');
-            $table->string('capture_img_out');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });

@@ -10,11 +10,7 @@ $time->setTimezone(new DateTimeZone('Europe/Copenhagen'));
 $ftime = $time->format('H:i:s');
 //userID
 $user_id = $_POST['user_id'];
-//image
-//$image_name = time().'.jpg';
-//$image_path = "onlinedtr/images/upload/$image_name";
-//$image_in = $_POST['capture_img_in'];
-//$image_out = $_POST['capture_img_out'];
+
 
   //Check if user exist
   $sql_checkuser = "SELECT id FROM users WHERE id=$user_id";
