@@ -11,6 +11,7 @@ class Department extends Model
       return $this->hasMany('App\User');
     }
 
+
   /**
    * The attributes that are mass assignable.
    *

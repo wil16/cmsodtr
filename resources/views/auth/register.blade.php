@@ -53,6 +53,25 @@
                             </div>
                         </div>
 
+                        //Dropdown list (to do - apply eloquent to make it dynamic)
+                        <div class="form-group row">
+                            <label for="department_id" class="col-md-4 col-form-label text-md-right">{{ __('Department') }}</label>
+                            <div class="col-md-6">
+                              <select name="department_id" input id="department_id" class="form-control">
+                                  <option value = "1">Administration</option>
+                                  <option value = "2">Finance and Accounting</option>
+                                  <option value = "3">Human Resources</option>
+                                  <option value = "4">Information Technology</option>
+                                  <option value = "5">Operations</option>
+                                  <option value = "6">Production and Manufacturing</option>
+                                  <option value = "7">Public Relations</option>
+                                  <option value = "8">Research and Development</option>
+                                  <option value = "9">Sales and Marketing</option>
+                                  <option value = "10">Purchasing</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="hire_date" class="col-md-4 col-form-label text-md-right">{{ __('Hire Date') }}</label>
 
@@ -106,7 +125,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Create') }}
                                 </button>
                             </div>
                         </div>
